@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Watch it together</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.3/plyr.css" />
+  </head>
+  <body>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#connectionModal"
+    >
+      Connect
+    </button>
+    <div class="alert alert-primary" id="status" role="alert">Disconnected</div>
+    <div>
+      <div class="mb-3">
+        <label for="videLink" class="form-label">Video Link</label>
+        <input
+          type="text"
+          class="form-control"
+          id="videLink"
+          placeholder="link"
+          value="//vjs.zencdn.net/v/oceans.mp4"
+        />
+      </div>
+      <div class="d-grid gap-2">
+        <button id="play" class="btn btn-primary" type="button">Play</button>
+      </div>
+    </div>
+    <div><video id="player" playsinline controls></video></div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="connectionModal"
+      tabindex="-1"
+      aria-labelledby="connectionModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="connectionModalLabel">Connect</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <select
+              class="form-select"
+              id="initiator"
+              aria-label="Default select example"
+            >
+              <option selected>Who is going to choose what to watch?</option>
+              <option value="me">Me</option>
+              <option value="them">He/She</option>
+            </select>
+            <div class="mb-3">
+              <label for="mysecretcode" class="form-label"
+                >My Secret Code (Give it to them)</label
+              >
+              <textarea
+                class="form-control"
+                id="mysecretcode"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="mysecretcode" class="form-label"
+                >Their Secret Code (Get it from them)</label
+              >
+              <textarea
+                class="form-control"
+                id="theirsecretcode"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="connect" type="button" class="btn btn-success">
+              Connect
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.3/plyr.js"></script>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
